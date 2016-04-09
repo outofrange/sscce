@@ -21,10 +21,10 @@ When using spring-boot:run, Tuckey's servlet class loader can't find `urlrewrite
 # Other stuff
 StackOverflow question "[Spring boot cannot find urlrewrite.xml inside jar file](http://stackoverflow.com/questions/31011577/spring-boot-cannot-find-urlrewrite-xml-inside-jar-file) might be related to this problem.
 
-Tuckey loads its configuration at (org.tuckey.web.filters.urlrewrite.UrlRewriteFilter#loadUrlRewriterLocal() (#L264))[https://github.com/paultuckey/urlrewritefilter/blob/urlrewritefilter-4.0.4/src/main/java/org/tuckey/web/filters/urlrewrite/UrlRewriteFilter.java#L264]
+Tuckey loads its configuration at [org.tuckey.web.filters.urlrewrite.UrlRewriteFilter#loadUrlRewriterLocal() (#L264)](https://github.com/paultuckey/urlrewritefilter/blob/urlrewritefilter-4.0.4/src/main/java/org/tuckey/web/filters/urlrewrite/UrlRewriteFilter.java#L264)
 
 An ugly, but working attempt to fix the problem by overriding UrlRewriteFilter#loadUrlRewriter can be seen in
-(this commit)[https://github.com/crowdsupport/crowdsupport/commit/abf5ed531f524cbc858f7d93f1aaf3b9e6c4f331].
+[this commit](https://github.com/crowdsupport/crowdsupport/commit/abf5ed531f524cbc858f7d93f1aaf3b9e6c4f331).
 
 # Tested environments
 Windows 8, 64bit
