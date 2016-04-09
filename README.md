@@ -4,7 +4,7 @@ This branch contains an example to demonstrate Spring Boot's issue with Tuckey's
 
 When starting the Spring Boot application as a jar, Tuckey is able to load `urlrewrite.xml` and everything is fine.
 
-    mvnw clean package && java -jar target/spring-boot-tuckey-0.1.0.jar
+    $ mvnw clean package && java -jar target/spring-boot-tuckey-0.1.0.jar
     ... snipped maven output ...
     ... snipped startup logs ...
     [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : org.tuckey.web.filters.urlrewrite.UrlRewriteFilter INFO: loaded (conf ok)
@@ -12,7 +12,7 @@ When starting the Spring Boot application as a jar, Tuckey is able to load `urlr
 
 When using spring-boot:run, Tuckey's servlet class loader can't find `urlrewrite.xml`:
 
-    mvnw clean spring-boot:run
+    $ mvnw clean spring-boot:run
     ... snipped maven output ...
     ... snipped startup logs ...
     [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : org.tuckey.web.filters.urlrewrite.UrlRewriteFilter ERROR: unable to find urlrewrite conf file at urlrewrite.xml
